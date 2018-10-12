@@ -1,5 +1,5 @@
 
-> fiix-cmms-client@2.6.3 version /var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client
+> fiix-cmms-client@2.6.4 version /var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client
 > echo $npm_package_version
 
-2.6.3
+2.6.4
