@@ -1,27 +1,121 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/node',
 1 verbose cli   '/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/npm',
-1 verbose cli   'run',
 1 verbose cli   'publish' ]
 2 info using npm@3.6.0
 3 info using node@v5.6.0
-4 verbose stack Error: missing script: publish
-4 verbose stack     at run (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/lib/run-script.js:147:19)
-4 verbose stack     at /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/lib/run-script.js:57:5
-4 verbose stack     at /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
-4 verbose stack     at checkBinReferences_ (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
-4 verbose stack     at final (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
-4 verbose stack     at then (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
-4 verbose stack     at /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
-4 verbose stack     at /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:76:16
-4 verbose stack     at tryToString (fs.js:414:3)
-4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
-5 verbose cwd /var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client
-6 error Linux 4.14.72-68.55.amzn1.x86_64
-7 error argv "/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/node" "/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/npm" "run" "publish"
-8 error node v5.6.0
-9 error npm  v3.6.0
-10 error missing script: publish
-11 error If you need help, you may report this error at:
-11 error     <https://github.com/npm/npm/issues>
-12 verbose exit [ 1, true ]
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package.tgz not in flight; packing
+9 verbose correctMkdir /var/lib/jenkins/.npm correctMkdir not in flight; initializing
+10 info lifecycle fiix-cmms-client@2.6.3~prepublish: fiix-cmms-client@2.6.3
+11 silly lifecycle fiix-cmms-client@2.6.3~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package.tgz',
+12 verbose tar pack   '/var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client' ]
+13 verbose tarball /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package.tgz
+14 verbose folder /var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client
+15 verbose addLocalTarball adding from inside cache /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package.tgz
+16 verbose correctMkdir /var/lib/jenkins/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd fiix-cmms-client@2.6.3
+18 verbose afterAdd /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package/package.json not in flight; writing
+19 verbose correctMkdir /var/lib/jenkins/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package/package.json written
+21 silly publish { name: 'fiix-cmms-client',
+21 silly publish   description: 'Fiix CMMS Javascript Client',
+21 silly publish   author:
+21 silly publish    { name: 'Fiix',
+21 silly publish      email: 'support@fiixsoftware.com',
+21 silly publish      url: 'https://www.fiixsoftware.com' },
+21 silly publish   version: '2.6.3',
+21 silly publish   homepage: 'https://fiixlabs.github.io/api-documentation',
+21 silly publish   keywords: [ 'api', 'sdk', 'cmms', 'iot', 'maintenance assistant', 'fiix' ],
+21 silly publish   licenses:
+21 silly publish    [ { type: 'Apache 2.0',
+21 silly publish        url: 'http://www.apache.org/licenses/LICENSE-2.0' } ],
+21 silly publish   main: 'index.js',
+21 silly publish   dependencies: { http: 'latest', https: 'latest' },
+21 silly publish   devDependencies:
+21 silly publish    { grunt: '~0.4.5',
+21 silly publish      'grunt-cli': '^1.2.0',
+21 silly publish      'grunt-contrib-clean': '^0.5.0',
+21 silly publish      'grunt-contrib-compress': '^0.9.1',
+21 silly publish      'grunt-contrib-concat': '^0.4.0',
+21 silly publish      'grunt-contrib-copy': '^0.5.0',
+21 silly publish      'grunt-contrib-jasmine': '^0.5.2',
+21 silly publish      'grunt-contrib-jshint': '~0.10.0',
+21 silly publish      'grunt-contrib-nodeunit': '~0.3.3',
+21 silly publish      'grunt-contrib-uglify': '~0.4.0',
+21 silly publish      'grunt-jasmine-node': '^0.2.1',
+21 silly publish      'grunt-npm': '0.0.2',
+21 silly publish      'grunt-properties': '^0.2.1',
+21 silly publish      'grunt-text-replace': '^0.3.12',
+21 silly publish      karma: '^0.12.17',
+21 silly publish      'karma-chrome-launcher': '^0.1.4',
+21 silly publish      'karma-jasmine': '^0.1.5',
+21 silly publish      'karma-phantomjs-launcher': '^0.1.4' },
+21 silly publish   scripts:
+21 silly publish    { build: 'grunt build',
+21 silly publish      test: 'grunt --api-tests-properties-path=$API_TESTS_PROPS_PATH --verbose',
+21 silly publish      version: 'echo $npm_package_version' },
+21 silly publish   engine: 'node >= 0.6.6',
+21 silly publish   readme: '# Fiix CMMS client for JavaScript\n\nThe official [Fiix CMMS](https://www.fiixsoftware.com) client for JavaScript, works in browsers, Node.js, and React-native.\n\n## Installation\n\n```sh\nnpm install fiix-cmms-client\n```\n\nOr you can download the package [here](https://fiixlabs.github.io/api-documentation/sdk.html).\n## Usage and Getting Started\n\nYou can find the "Getting Started" guide [here](https://fiixlabs.github.io/api-documentation/guide.html).\n\n## License\n\nDistributed under the\n[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),\nsee LICENSE.txt and NOTICE.txt for more information.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'cf9975addca5ddb9e9c473f058e40d9f10a65294',
+21 silly publish   _id: 'fiix-cmms-client@2.6.3',
+21 silly publish   _shasum: '1848c40da7b0a21a776c559220adf9ffc942a594',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name fiix-cmms-client
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/fiix-cmms-client
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /var/lib/jenkins/.npm/fiix-cmms-client/2.6.3/package.tgz
+29 verbose request uri https://registry.npmjs.org/fiix-cmms-client
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 6:43:49 PM
+32 verbose request id 5622916d64e949ff
+33 http request PUT https://registry.npmjs.org/fiix-cmms-client
+34 http 403 https://registry.npmjs.org/fiix-cmms-client
+35 verbose headers { date: 'Wed, 10 Oct 2018 18:43:50 GMT',
+35 verbose headers   'content-type': 'application/json',
+35 verbose headers   'transfer-encoding': 'chunked',
+35 verbose headers   connection: 'keep-alive',
+35 verbose headers   'set-cookie': [ '__cfduid=d95c5c4744bf359b6a57a9fd10e38e5301539197029; expires=Thu, 10-Oct-19 18:43:49 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+35 verbose headers   'cf-ray': '467b3c18fac59f84-IAD',
+35 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+35 verbose headers   vary: 'Accept-Encoding',
+35 verbose headers   server: 'cloudflare',
+35 verbose headers   'content-encoding': 'gzip' }
+36 verbose request invalidating /var/lib/jenkins/.npm/registry.npmjs.org/fiix-cmms-client on PUT
+37 error publish Failed PUT 403
+38 verbose stack Error: You cannot publish over the previously published versions: 2.6.3. : fiix-cmms-client
+38 verbose stack     at makeError (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+38 verbose stack     at CachingRegistryClient.<anonymous> (/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+38 verbose stack     at /var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:178:7
+38 verbose stack     at Gunzip.onEnd (zlib.js:227:5)
+38 verbose stack     at emitNone (events.js:85:20)
+38 verbose stack     at Gunzip.emit (events.js:179:7)
+38 verbose stack     at endReadableNT (_stream_readable.js:906:12)
+38 verbose stack     at nextTickCallbackWith2Args (node.js:475:9)
+38 verbose stack     at process._tickCallback (node.js:389:17)
+39 verbose statusCode 403
+40 verbose pkgid fiix-cmms-client
+41 verbose cwd /var/lib/jenkins/jobs/PublishFiixCmmsClientJSTest/workspace/fiix-cmms-client
+42 error Linux 4.14.72-68.55.amzn1.x86_64
+43 error argv "/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/node" "/var/lib/jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/Node5.6/bin/npm" "publish"
+44 error node v5.6.0
+45 error npm  v3.6.0
+46 error code E403
+47 error You cannot publish over the previously published versions: 2.6.3. : fiix-cmms-client
+48 error If you need help, you may report this error at:
+48 error     <https://github.com/npm/npm/issues>
+49 verbose exit [ 1, true ]
