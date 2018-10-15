@@ -6,7 +6,7 @@
 		"email": "support@fiixsoftware.com",
 		"url": "https://www.fiixsoftware.com"
 	},
-	"version": "2.6.4",
+	"version": "2.8.0",
 	"homepage": "https://fiixlabs.github.io/api-documentation",
 	"keywords": [
 		"api",
@@ -52,8 +52,5 @@
 		"test": "grunt --api-tests-properties-path=$API_TESTS_PROPS_PATH --verbose",
 		"version": "echo $npm_package_version"
 	},
-	"engine": "node >= 0.6.6",
-	"publishConfig": {
-		"registry": "https://repo.fiixlabs.com/repository/fiix-public-npm/"
-	}
+	"engine": "node >= 0.6.6"
 }
