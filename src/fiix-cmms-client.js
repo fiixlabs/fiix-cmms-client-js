@@ -799,10 +799,11 @@ var FiixCmmsClient = function () {
 
         if (getTimeoutMs()) {
             req.setTimeout(getTimeoutMs(), function () {
+                let e = null;
                 try {
-                    stream.abort()
-                } catch (e) {
-
+                    req.abort();
+                } catch (ex) {
+                    e = ex;
                 }
 
                 var response = {};
