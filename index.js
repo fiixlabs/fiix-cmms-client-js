@@ -326,7 +326,7 @@ var FiixCmmsClient = function () {
         /**
          * See Gruntfile.js & getClientVersion()
          */
-        MAGICK_I_HAZ_A_VERSION = "2.6.3", // Note Gulpfile is looking for this string!
+        MAGICK_I_HAZ_A_VERSION = "2.8.2", // Note Gulpfile is looking for this string!
         clientVersionString = MAGICK_I_HAZ_A_VERSION, // See Gruntfile.js & getClientVersion()
         clientVersion = null,
         /**
@@ -799,10 +799,11 @@ var FiixCmmsClient = function () {
 
         if (getTimeoutMs()) {
             req.setTimeout(getTimeoutMs(), function () {
+                var e = null;
                 try {
-                    stream.abort()
-                } catch (e) {
-
+                    req.abort();
+                } catch (ex) {
+                    e = ex;
                 }
 
                 var response = {};

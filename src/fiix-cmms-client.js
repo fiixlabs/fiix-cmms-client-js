@@ -799,7 +799,7 @@ var FiixCmmsClient = function () {
 
         if (getTimeoutMs()) {
             req.setTimeout(getTimeoutMs(), function () {
-                let e = null;
+                var e = null;
                 try {
                     req.abort();
                 } catch (ex) {
