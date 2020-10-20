@@ -326,7 +326,7 @@ var FiixCmmsClient = function () {
         /**
          * See Gruntfile.js & getClientVersion()
          */
-        MAGICK_I_HAZ_A_VERSION = "2.8.3", // Note Gulpfile is looking for this string!
+        MAGICK_I_HAZ_A_VERSION = "2.8.4", // Note Gulpfile is looking for this string!
         clientVersionString = MAGICK_I_HAZ_A_VERSION, // See Gruntfile.js & getClientVersion()
         clientVersion = null,
         /**

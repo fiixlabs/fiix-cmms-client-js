@@ -1,0 +1,11 @@
+{
+  "output": "csv",
+  "delimiter": ",",
+  "exclude": ["@fiix/angular-barcode-component", "@fiix/angular-components"],
+  "fields": [
+    "name",
+    "link",
+    "licenseType"
+  ],
+  "only": "prod"
+}

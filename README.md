@@ -8,7 +8,7 @@ The official [Fiix CMMS](https://www.fiixsoftware.com) client for JavaScript, wo
 npm install fiix-cmms-client
 ```
 
-Or you can download the package [here](https://fiixlabs.github.io/api-documentation/sdk.html).
+Or you can refer to the SDK on NPMJS [here](https://www.npmjs.com/package/fiix-cmms-client?activeTab=versions).
 ## Usage and Getting Started
 
 You can find the "Getting Started" guide [here](https://fiixlabs.github.io/api-documentation/guide.html).
