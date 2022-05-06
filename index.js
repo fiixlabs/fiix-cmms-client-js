@@ -302,17 +302,17 @@ var FiixCmmsClient_CryptoJS = FiixCmmsClient_CryptoJS || function (h, s) {
  */
 var FiixCmmsClient = function () {
     function init() {
-        if(typeof XMLHttpRequest === "function"){
+        if(typeof require == "function" && require){
+            useXhr = false;
+            useNode = true;
+        }
+        else if(typeof XMLHttpRequest === "function"){
             useXhr = true;
             useNode = false;
         }
         else if(typeof XMLHttpRequest === "object"){ // PhantomJS?
             useXhr = true;
             useNode = false;
-        }
-        else if(typeof require == "function" && require){
-            useXhr = false;
-            useNode = true;
         }
         else{
             //  WTF
