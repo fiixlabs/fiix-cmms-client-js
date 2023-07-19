@@ -1,42 +1,38 @@
 // Karma configuration
-// Generated on Tue Mar 25 2014 13:26:29 GMT-0400 (EDT)
-
+// Generated on Mon Jun 26 2023 13:25:32 GMT-0400 (Eastern Dayligh
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '..',
+    basePath: '',
 
 
     // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
     frameworks: ['jasmine'],
 
-    //Bob plugins: ['karma-jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
-      'src/ma-cmms-client-js.js',
-      'spec/*.js'
+      'src/**/*.test.js',
+      'src/*.js'
     ],
 
 
-    // list of files to exclude
+    // list of files / patterns to exclude
     exclude: [
-      
     ],
 
 
     // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
-    
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
     reporters: ['progress'],
 
 
@@ -54,16 +50,20 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    //browsers: ['Chrome'], 'PhantomJS'
-    browsers: ['PhantomJS'],
+    // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
+    browsers: ['Chrome'],
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
-  });
-};
+    singleRun: false,
+
+    // Concurrency level
+    // how many browser instances should be started simultaneously
+    concurrency: Infinity
+  })
+}

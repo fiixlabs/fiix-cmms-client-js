@@ -326,7 +326,7 @@ var FiixCmmsClient = function () {
         /**
          * See Gruntfile.js & getClientVersion()
          */
-        MAGICK_I_HAZ_A_VERSION = "2.8.4", // Note Gulpfile is looking for this string!
+        MAGICK_I_HAZ_A_VERSION = "2.41.0", // Note Gulpfile is looking for this string!
         clientVersionString = MAGICK_I_HAZ_A_VERSION, // See Gruntfile.js & getClientVersion()
         clientVersion = null,
         /**
@@ -501,6 +501,35 @@ var FiixCmmsClient = function () {
 
         return ret.endpoint + "?" + ret.queryString + "&sig=" + ret.signature;
 
+    }
+
+    function calcUploadFileURI() {
+        var ret = {};
+
+        ret.endpoint = getBaseUri();
+        ret.endpoint += "upload";
+        ret.queryString = "";
+        ret.queryString += "action=" + encodeURIComponent("uploadFile");
+        ret.queryString += "&service=" + encodeURIComponent("cmms");
+        ret.queryString += "&accessKey=" + encodeURIComponent(authToken);
+        ret.queryString += "&appKey=" + encodeURIComponent(appKey);
+        ret.queryString += "&timestamp=" + encodeURIComponent(getUtcTime());
+        ret.queryString += "&signatureVersion=1";
+        ret.queryString += "&signatureMethod=HmacSHA256";
+
+        ret.uri = ret.endpoint + "?" + ret.queryString;
+
+        ret.headers = [
+        ];
+
+        if (signMessages) {
+            ret.signature = calcSignature(ret);
+            ret.headers.push({
+                key: "Authorization",
+                value: ret.signature
+            });
+        }
+        return ret;
     }
 
     function calcFileURI(fileId) {
@@ -1063,6 +1092,42 @@ var FiixCmmsClient = function () {
         }
     }
 
+    function formUploadFileData(params) {
+        var formData = new FormData;
+        Object.keys(params).forEach(function(key)
+        {
+            if(key === 'descriptions')
+            {
+                formData.append(key, JSON.stringify(params[key]));
+            }
+            else
+            {
+                const file = new File([ params[key] ], '');
+                formData.append(key, file);
+            }
+        });
+        return formData;
+    }
+
+    function uploadFile(params) {
+        var body  = formUploadFileData(params);
+        var tp = calcUploadFileURI();
+        var callback = "function";
+
+        var theResult = null;
+
+        if (useNode) {
+            theResult = doNode(tp, callback, body);
+        } else
+        if (useXhr) {
+            theResult = doXhr(tp, null, body);
+        } else {
+            throw "Error: unknown environment - not Node, not browser, what is it?";
+        }
+
+        return theResult;
+    }
+
     //	Reveal
     return {
         /**
@@ -1112,7 +1177,9 @@ var FiixCmmsClient = function () {
 
         calcFileURI: calcFileURI,
         calcFileUploadURI: calcFileUploadURI,
-        calcWOFileURI: calcWOFileURI
+        calcWOFileURI: calcWOFileURI,
+
+        uploadFile: uploadFile
     };
 };
 
